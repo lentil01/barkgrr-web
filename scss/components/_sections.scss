@@ -19,9 +19,12 @@ body {
   flex-direction: column;
   min-height: 100%;
   position: relative;
-  // overflow: auto;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+p {
+  font-family: "Karla", Arial, Helvetica, sans-serif;
 }
 
 .container {
