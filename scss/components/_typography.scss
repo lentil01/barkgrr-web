@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "IBMPlexSans-Regular";
+  src: url("fonts/IBMPlexSans/IBMPlexSans-Regular.woff") format("woff"),
+    url("fonts/IBMPlexSans/IBMPlexSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "BluuNext-Bold";
+  src: url("fonts/bluunext-bold-webfont.woff") format("woff"),
+    url("fonts/BluuNext-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "IBMPlexSans-SemiBold";
+  src: url("fonts/IBMPlexSans/IBMPlexSans-SemiBold.woff") format("woff"),
+    url("fonts/IBMPlexSans/IBMPlexSans-SemiBold.otf") format("opentype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "IBMPlexSans-Italic";
+  src: url("fonts/IBMPlexSans/IBMPlexSans-Italic.woff") format("woff"),
+    url("fonts/IBMPlexSans/IBMPlexSans-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "IBMPlexSans-Light";
+  src: url("fonts/IBMPlexSans/IBMPlexSans-Light.woff") format("woff"),
+    url("fonts/IBMPlexSans/IBMPlexSans-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono-Regular";
+  src: url("fonts/IBMPlexMono/IBMPlexMono-Regular.woff") format("woff"),
+    url("fonts/IBMPlexMono/IBMPlexMono-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "IBMPlexMono-Text";
+  src: url("fonts/IBMPlexMono/IBMPlexMono-Text.woff") format("woff"),
+    url("fonts/IBMPlexMono/IBMPlexMono-Text.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "IBMPlexSans-Text";
+  src: url("fonts/IBMPlexSans/IBMPlexSans-Text.woff") format("woff"),
+    url("fonts/IBMPlexSans/IBMPlexSans-Text.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "IBMPlexMono-Italic";
+  src: url("fonts/IBMPlexMono/IBMPlexMono-Italic.woff") format("woff"),
+    url("fonts/IBMPlexMono/IBMPlexMono-Italic.otf") format("opentype");
+}
+
+h4 {
+  font-family: "IBMPlexSans-SemiBold", "Arial Black", Arial, sans-serif;
+  color: #797979;
+  font-size: 16px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
+  color: $heading-color;
+  font-size: 48px;
+  line-height: 1.15em;
+}
+
+@media (max-width: 675px) {
+  h5 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 440px) {
+  h5 {
+    font-size: 34px;
+  }
+}
+
+h6 {
+  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
+  color: $heading-color;
+  font-size: 64px;
+  letter-spacing: -0.05em;
+  text-align: center;
+}
+
+@media (max-width: 675px) {
+  h6 {
+    font-size: 100px;
+  }
+}
+
+h3 {
+  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
+  text-transform: uppercase;
+  position: relative;
+  // padding-left: 3rem;
+  color: $heading-color;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+
+  span {
+    background: $bg-color;
+    padding: 0 1rem 0 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    background: #d7dcda;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media (max-width: 512px) {
+  h3 {
+    padding-left: 0;
+    margin: 0 -1.5rem;
+
+    span {
+      padding-left: 1.5rem;
+    }
+  }
+}
+
+h1 {
+  font-size: 22px;
+
+  span {
+    font-family: "IBMPlexSans-Regular", Arial, Helvetica, sans-serif;
+    margin: 0;
+    text-transform: none;
+    line-height: 1.5em;
+    color: $heading-color;
+  }
+}
+
+h2 {
+  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
+  color: $heading-color;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+
+  span {
+    font-family: "IBMPlexSans-Regular", Arial, Helvetica, sans-serif;
+    margin: 0;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.5em;
+  }
+}
+
+@media (max-width: 512px) {
+  h2 {
+    span {
+      font-family: "IBMPlexSans-Text", Arial, Helvetica, sans-serif;
+      font-size: 17px;
+    }
+  }
+}
