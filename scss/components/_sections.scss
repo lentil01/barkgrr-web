@@ -66,8 +66,6 @@ body {
 
 .topNav {
   position: relative;
-  // top: 0;
-  // left: 0;
   padding: 2rem 4rem;
 
   a {
@@ -103,6 +101,59 @@ body {
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+.footer {
+  border-top: solid 1px $n0;
+  position: relative;
+  padding: 2rem 4rem;
+
+  a {
+    margin-right: 1.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-links {
+    margin: auto;
+
+    &-right {
+      text-align: right;
+    }
+
+    &-left {
+      text-align: left;
+    }
+  }
+
+  &-socialIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  &-logo {
+    margin: auto;
+
+    &-image {
+      width: 140px;
+    }
+  }
+
+  &-light {
+    &-link {
+      color: $link-color-light;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-text {
+      color: $link-color-light;
     }
   }
 }
