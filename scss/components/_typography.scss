@@ -1,45 +1,49 @@
 h1 {
-  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
+  font-family: 'Averia Libre', cursive;
   font-size: 22px;
 }
 
 h2 {
-  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
+  font-family: 'Averia Libre', cursive;
   color: $heading-color;
   font-size: 18px;
   letter-spacing: 0.3px;
 }
 
 h3 {
-  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
+  font-family: 'Averia Libre', cursive;
   text-transform: uppercase;
   position: relative;
-  color: $n900;
+  color: $heading-color;
   font-size: 1.5em;
   letter-spacing: 1px;
 }
 
 h4 {
-  font-family: "IBMPlexSans-SemiBold", "Arial Black", Arial, sans-serif;
-  color: #797979;
+  font-family: 'Averia Libre', cursive;
+  color: $heading-color;
   font-size: 16px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 h5 {
-  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
-  color: $n900;
+  font-family: 'Averia Libre', cursive;
+  color: $heading-color;
   font-size: 48px;
   line-height: 1.15em;
 }
 
 h6 {
-  font-family: "BluuNext-Bold", "Palatino Linotype", Palatino, serif;
-  color: $n900;
+  font-family: 'Averia Libre', cursive;
+  color: $heading-color;
   font-size: 64px;
   letter-spacing: -0.05em;
   text-align: center;
+}
+
+p {
+  font-family: "Karla", Arial, Helvetica, sans-serif;
 }
 
 @media (min-width: 512px) and (max-width: 768px) {
