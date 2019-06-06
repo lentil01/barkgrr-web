@@ -2,7 +2,7 @@ button {
   background: none;
   border: 0;
   box-sizing: border-box;
-  box-shadow: inset 0 0 0 0px $bg-color;
+  box-shadow: inset 0 0 0 0px $n0;
   position: relative;
   vertical-align: middle;
   cursor: pointer;
@@ -22,81 +22,7 @@ button {
   }
 }
 
-.draw {
-  transition: color 0.25s ease-in-out;
-
-  &::before,
-  &::after {
-    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-    border: 1.5px solid transparent;
-    width: 0;
-    height: 0;
-  }
-
-  // This covers the top & right borders (expands right, then down)
-  &::before {
-    top: 0;
-    left: 0;
-  }
-
-  // And this the bottom & left borders (expands left, then up)
-  &::after {
-    bottom: 0;
-    right: 0;
-  }
-
-  &:hover {
-    color: $heading-color;
-  }
-
-  // Hover styles
-  &:hover::before,
-  &:hover::after {
-    width: 100%;
-    height: 100%;
-  }
-
-  &:hover::before {
-    border-top-color: $heading-color;
-    border-right-color: $heading-color;
-    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
-  }
-
-  &:hover::after {
-    border-bottom-color: $heading-color; // Make borders visible
-    border-left-color: $heading-color;
-    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
-      height 0.25s ease-out 0.75s;
-  }
-}
-
-// Inherits from .draw
-.meet {
-  &:hover {
-    color: $heading-color;
-  }
-
-  // Start ::after in same position as ::before
-  &::after {
-    top: 0;
-    left: 0;
-  }
-
-  // Change colors
-  &:hover::before {
-    border-top-color: $heading-color;
-    border-right-color: $heading-color;
-  }
-
-  &:hover::after {
-    border-bottom-color: $heading-color;
-    border-left-color: $heading-color;
-    transition: height 0.25s ease-in-out, width 0.25s ease-in-out 0.25s;
-  }
-}
-
 .button {
-  font-family: "IBMPlexMono-Regular", "Courier New", Courier, monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: 3px;
@@ -111,13 +37,10 @@ button {
     padding-left: 18px;
     padding-right: 18px;
   }
+
   &-transparent-icon {
     padding: 6px 18px 2px;
     font-size: 28px;
-
-    &:first-child {
-      margin-left: -18px;
-    }
   }
 
   &-transparent {
@@ -159,17 +82,16 @@ button {
   }
 
   &-light-outline {
-    border: 1.5px solid $bg-color;
+    border: 1.5px solid $n0;
     border-radius: 3px;
-    color: $bg-color;
+    color: $n0;
     transition: background-color 0.2s ease, color 0.2s ease;
     -webkit-transition: background-color 0.2s ease, color 0.2s ease;
     -moz-transition: background-color 0.2s ease, color 0.2s ease;
     -o-transition: background-color 0.2s ease, color 0.2s ease;
 
     &:hover {
-      color: $yellow;
-      background: $bg-color;
+      background: $n0;
       text-decoration: none;
       transition: background-color 0.25s ease, color 0.2s ease;
       -webkit-transition: background-color 0.25s ease, color 0.2s ease;
@@ -180,24 +102,17 @@ button {
 
   &-transparent-light-draw {
     background-color: none;
-    color: $bg-color;
-
-    &:first-child {
-      margin-left: -18px;
-    }
+    color: $n0;
 
     &:hover {
-      color: $bg-color;
+      color: $n0;
       text-decoration: none;
     }
   }
+
   &-transparent-dark-draw {
     background-color: none;
     color: $heading-color;
-
-    &:first-child {
-      margin-left: -18px;
-    }
 
     &:hover {
       color: $heading-color;

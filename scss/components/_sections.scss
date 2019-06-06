@@ -13,8 +13,8 @@ html {
 
 body {
   font-family: "Karla", Arial, Helvetica, sans-serif;
-  background-color: $bg-color;
-  color: #4b4a4a;
+  background-color: $n0;
+  color: $n900;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -43,6 +43,7 @@ p {
     margin: auto;
     padding-bottom: 1rem;
   }
+
   &-bg {
     background-image: url(../img/home-bg.png);
     background-position: center;
@@ -62,10 +63,14 @@ p {
 }
 
 .fadeinslow {
-  -webkit-animation: fadein 1.3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 1.3s; /* Firefox < 16 */
-  -ms-animation: fadein 1.3s; /* Internet Explorer */
-  -o-animation: fadein 1.3s; /* Opera < 12.1 */
+  -webkit-animation: fadein 1.3s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1.3s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 1.3s;
+  /* Internet Explorer */
+  -o-animation: fadein 1.3s;
+  /* Opera < 12.1 */
   animation: fadein 1.3s;
 }
 
@@ -73,6 +78,7 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -83,6 +89,7 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -93,6 +100,7 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -103,6 +111,7 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -113,6 +122,7 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
