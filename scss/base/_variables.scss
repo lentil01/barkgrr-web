@@ -2,6 +2,9 @@ $n0: #ffffff;
 $n20: #f6f4f1;
 $n30: #f0eeea;
 $n40: #edeae6;
+$n400: #4f5351;
+$n500: #373a38;
+
 $n900: #2e2d2c;
 
 $g20: #3fb761;
@@ -13,3 +16,6 @@ $heading-color: $n900;
 
 $green-primary: $g60;
 $green-highlight: rgba(61, 143, 84, 0.7);
+
+$button-dark-bg: $n500;
+$button-dark-bg-hover: $n400;
