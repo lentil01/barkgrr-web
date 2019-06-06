@@ -23,8 +23,8 @@ button {
 }
 
 .button {
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  // letter-spacing: 0.05em;
+  // text-transform: uppercase;
   border-radius: 3px;
   padding: 12px 28px 10px;
   text-align: center;
@@ -81,7 +81,7 @@ button {
     }
   }
 
-  &-light-outline {
+  &-outline {
     border: 1.5px solid $n0;
     border-radius: 3px;
     color: $n0;
@@ -91,6 +91,7 @@ button {
     -o-transition: background-color 0.2s ease, color 0.2s ease;
 
     &:hover {
+      color: $green-primary;
       background: $n0;
       text-decoration: none;
       transition: background-color 0.25s ease, color 0.2s ease;

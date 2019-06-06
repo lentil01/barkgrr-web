@@ -64,6 +64,49 @@ body {
   }
 }
 
+.topNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem 4rem;
+
+  a {
+    margin-right: 1.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-links {
+    text-align: right;
+    margin: auto;
+  }
+
+  &-socialIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  &-logo {
+    margin: auto;
+
+    &-image {
+      width: 140px;
+    }
+  }
+
+  &-light {
+    &-link {
+      color: $link-color-light;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 @media (max-width: 512px) {
   .home {
     &-bg {

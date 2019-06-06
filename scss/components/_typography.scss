@@ -46,6 +46,11 @@ p {
   font-family: "Karla", Arial, Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: $link-color;
+}
+
 @media (min-width: 512px) and (max-width: 768px) {
   h5 {
     font-size: 40px;
