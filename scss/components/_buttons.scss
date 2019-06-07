@@ -132,3 +132,15 @@ button {
     }
   }
 }
+
+.tag {
+  border-radius: 8px;
+  padding: .25rem .5rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+
+  &-light {
+    color: $green-primary;
+    background: $bg-color;
+  }
+}
