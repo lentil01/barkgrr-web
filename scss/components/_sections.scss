@@ -111,6 +111,11 @@ body {
   &-socialIcon {
     width: 26px;
     height: 26px;
+    transition: opacity .2s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &-logo {
@@ -124,9 +129,10 @@ body {
   &-light {
     &-link {
       color: $link-color-light;
+      transition: opacity .2s ease-in-out;
 
       &:hover {
-        text-decoration: underline;
+        opacity: 0.7;
       }
     }
   }
@@ -177,9 +183,10 @@ body {
   &-light {
     &-link {
       color: $link-color-light;
+      transition: opacity .2s ease-in-out;
 
       &:hover {
-        text-decoration: underline;
+        opacity: 0.7;
       }
     }
 
