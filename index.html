@@ -16,8 +16,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="icon" href="img/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
   <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/dojo/1.8/dojo/dojo.js"></script>
+  <script type="text/javascript">
+    require([
+      "dojo/query",
+      "dojo/dom",
+      "dojo/dom-geometry",
+      "dojo/dom-class",
+      "dojo/dom-style",
+      "dojo/dom-construct",
+      "dijit/focus",
+      "dojo/parser",
+      "dijit/form/DateTextBox",
+      "dojo/NodeList-traverse",
+      "dojo/domReady!"
+    ], function (query, dom, domGeom, domClass, domStyle, domConstruct, focusUtil, parser) {
+
+      // Move the focused-field class to the field-group that contains the focused input.
+      var handle = focusUtil.watch("curNode", function (name, oldValue, newValue) {
+        var parent = query(newValue).closest('.field-group');
+        if (!domClass.contains(parent, "focused-field")) {
+          query('.focused-field').removeClass('focused-field');
+          parent.addClass('focused-field');
+        }
+      });
+
+      // Add error class to parent wrapper and only show error borders on empty fields in addresses
+      query('.feedback.error').closest('.field-group').addClass('error');
+      query('.addressfield input:text[value=""]').addClass('empty');
+
+      // Focus first input of birthdayfield or phonefield-us when parent wrapper is clicked
+      query('div.subfields').on("click", function (e) {
+        var firstInput = query('input', e.target)[0];
+        focusUtil.focus(firstInput);
+      });
+
+      // Prevent image blowout in IE6 since it doesn't support max-width
+      if (domClass.contains(query('html')[0], "ie-lte7")) {
+
+        query('img').forEach(function (node) {
+          var computedStyle = domStyle.getComputedStyle(node);
+          var w = domGeom.getContentBox(node, computedStyle).w;
+          console.log(w);
+          if (w >= 600) {
+            domStyle.set(node, "width", "600px");
+          }
+        });
+      }
+
+      // Use native checkboxes and radio buttons outside the app
+      dojo.query(".radio input, .checkbox input").removeAttr("data-dojo-type");
+
+      // Render DateTextBoxes
+      parser.parse();
+
+      query('form').on("submit", function (e) {
+        var invalidDate = dojo.query('.dijitTextBoxError');
+        if (invalidDate.length) {
+          query('.dijitDateTextBox ~ .feedback.error').forEach(domConstruct.destroy);
+          invalidDate.forEach(function (node) {
+            domConstruct.place(
+              '<div class="feedback error"><div class="errorText">Please enter a valid date</div></div>',
+              node, 'after');
+          });
+          e.preventDefault();
+        }
+      });
+
+      twemoji.parse(document.body, {
+        size: 72
+      });
+
+      query(".emoji").forEach(function (emoji) {
+        domStyle.set(emoji, {
+          width: "16px",
+          height: "16px"
+        });
+      });
+    });
+  </script>
+
+  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+  
 </head>
 
 <body class="home-bg">
@@ -27,7 +111,7 @@
   <div class="topNav col-12 col-xl-12 row">
     <div class="col-12 row topNav-links topNav-links-left">
       <div class="topNav-link">
-        <a href="#" ><img src="img/logo-white.svg" class="topNav-logo-image image" /></a>
+        <a href="#"><img src="img/logo-white.svg" class="topNav-logo-image image" /></a>
       </div>
       <span class="topNav-link tag tag-light">
         Coming Soon
@@ -43,8 +127,54 @@
   <div class="container-center col-xl-12 row">
     <div class="home-hero col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
       <h5 class="body-text-light">
-        A dog community app bringing pawsome pups & hoomans together!
+        A dog community app bringing pawsome pups & humans together!
       </h5>
+
+
+      <!-- <form class="home-hero-emailForm" action="/action_page.php">
+          <input class="inputField" type="email" name="emailaddress" placeholder="Email">
+          <input type="submit" value="Get on the list" class="inputSubmit">
+        </form> -->
+<div class="home-hero-emailForm">
+        <p class="body-text-light">
+            Sign up for emails to get notified about important news.
+        </p>
+      <form  action="https://gmail.us3.list-manage.com/subscribe/post" method="POST">
+        <input type="hidden" name="u" value="342a2f534c2858c60a7bf26f3">
+        <input type="hidden" name="id" value="0bea75c170">
+
+        <!-- people should not fill these in and expect good things -->
+        <!-- <div class="field-shift" aria-label="Please leave the following three fields empty">
+          <label for="b_name">Name: </label>
+          <input type="text" name="b_name" tabindex="-1" value="" placeholder="Freddie" id="b_name">
+
+          <label for="b_email">Email: </label>
+          <input type="email" name="b_email" tabindex="-1" value="" placeholder="youremail@gmail.com" id="b_email">
+
+          <label for="b_comment">Comment: </label>
+          <textarea name="b_comment" tabindex="-1" placeholder="Please comment" id="b_comment"></textarea>
+        </div> -->
+
+        <!-- <div id="mergeTable" class="mergeTable"> -->
+
+
+          <!-- <div class="mergeRow dojoDndItem mergeRow-email" id="mergeRow-0"> -->
+            <!-- <label for="MERGE0">Email Address 
+              <span class="req asterisk">*</span>
+            </label> -->
+            <!-- <div class="field-group"> -->
+              <input class="inputField" type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" placeholder="Email">
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+
+        <!-- <div class="submit_container clear"> -->
+          <input class="inputSubmit" type="submit" class="formEmailButton" name="submit" value="Subscribe">
+        <!-- </div> -->
+        <input type="hidden" name="ht" value="375ac4420253a212931bead81f3f715b95ce6f78:MTU2MDcxMDc3NC4wMDcx">
+        <input type="hidden" name="mc_signupsource" value="hosted">
+      </form>
+    </div>
     </div>
   </div>
 
@@ -66,3 +196,13 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-329148-88', {'allowLinker': true});
+  ga('set', 'hostname', '.list-manage.com');
+  ga('send', 'pageview');
+</script>

@@ -51,6 +51,15 @@ body {
   height: auto;
 }
 
+// .field-shift {
+//   left: -9999px; position: absolute !important;
+// }
+
+// html[dir="rtl"] .field-shift {
+//   right: -9999px !important;
+//   left: auto !important;
+// }
+
 .home {
 
   &-hero {
@@ -58,6 +67,10 @@ body {
     color: $text-light;
     border-radius: 8px;
     padding: 0rem 4rem;
+
+    &-emailForm {
+      margin-top: 2rem;
+    }
   }
 
   &-logo {
@@ -197,6 +210,41 @@ body {
 }
 
 
+.inputField {
+  border-radius: 6px;
+  border: none;
+  padding: 1rem;
+  margin-right: .5rem;
+  font-family: "Karla", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2pt #51AE7D;
+  }
+}
+
+.inputSubmit {
+  font-family: "Karla", Arial, Helvetica, sans-serif;
+  border-radius: 100px;
+  border: none;
+  padding: 1rem;
+  background: #51AE7D;
+  color: $text-light;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background .2s ease-in-out;
+
+  &:hover {
+    background: rgb(71, 168, 116);
+  }
+  &:focus {
+    outline: none;
+  }
+
+}
+
+
 @media (max-width: 576px) {
   .home {
     &-bg {
@@ -211,6 +259,17 @@ body {
       padding: 0 2rem;
     }
   }
+  
+  .inputField {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .inputSubmit {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
 
   .footer {
     &-links {
