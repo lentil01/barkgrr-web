@@ -21,6 +21,7 @@ body {
   position: relative;
   max-width: 100%;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
@@ -46,6 +47,9 @@ body {
     &-light {
       color: $text-light;
     }
+    &-dark {
+      color: $text-dark;
+    }
   }
 }
 
@@ -69,6 +73,17 @@ body {
 //   right: -9999px !important;
 //   left: auto !important;
 // }
+
+.project-row {
+  padding: 3rem 4rem;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  margin-bottom: auto;
+
+  &-element {
+    padding: 1rem;
+  }
+}
 
 .home {
 
@@ -98,9 +113,26 @@ body {
   }
 }
 
+// .imageDescription {
+//   &-left {
+//     padding-right: 2rem;
+//   }
+// }
+
+.link {
+  &-primary {
+    color: $action-primary;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+
 .topNav {
   position: relative;
   padding: 2rem 4rem;
+  margin-bottom: 0rem;
 
   a {
     margin-right: 1.5rem;
@@ -158,9 +190,7 @@ body {
 
       &-selected {
         border-color: $text-light;
-
       }
-
 
       &:hover {
         border-color: $text-light;
@@ -170,14 +200,44 @@ body {
       }
     }
   }
+
+  &-dark {
+    &-link {
+      color: $link-color-dark;
+      transition: border-color .1s ease-in-out;
+      border-bottom: 1.5px solid transparent;
+      padding-bottom: 4px;
+
+      &-selected {
+        border-color: $link-color-dark;
+      }
+
+      &:hover {
+        border-color: $link-color-dark;
+      }
+      &:active {
+        border-color: $link-color-dark;
+      }
+    }
+  }
 }
 
 .footer {
   position: relative;
   padding: 2rem 0;
 
-  &-border {
+  &-border-light {
     border-top: solid 1px $n0;
+    margin: 0 4rem;
+  }
+
+  &-border-dark {
+    // position: fixed;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // width: 100%;
+    border-top: solid 1px $n900;
     margin: 0 4rem;
   }
 
@@ -232,6 +292,21 @@ body {
       color: $link-color-light;
     }
   }
+
+  &-dark {
+    &-link {
+      color: $link-color-dark;
+      transition: opacity .2s ease-in-out;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &-text {
+      color: $text-dark;
+    }
+  }
 }
 
 
@@ -273,6 +348,9 @@ body {
 
 
 @media (max-width: 576px) {
+  .project-row {
+    padding: 2rem;
+  }
   .home {
     &-bg {
       background: url(../img/home-bg-mobile.png) no-repeat center center fixed;
@@ -330,7 +408,10 @@ body {
   }
 
   .footer {
-    &-border {
+    &-border-dark {
+      margin: 0 2rem;
+    }
+    &-border-light {
       margin: 0 2rem;
     }
   }
@@ -343,5 +424,11 @@ body {
         display: none;
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .tag-light {
+    display: none;
   }
 }
