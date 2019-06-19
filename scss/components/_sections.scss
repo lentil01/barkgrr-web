@@ -23,6 +23,16 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background: $green-highlight; /* WebKit/Blink Browsers */
+  color: $text-light;
+}
+::-moz-selection {
+  background: $green-highlight; /* Gecko Browsers */
+  color: $text-light;
+
+}
+
 .container {
   max-width: 100%;
 
