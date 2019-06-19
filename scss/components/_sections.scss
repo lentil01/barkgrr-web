@@ -24,13 +24,13 @@ body {
 }
 
 ::selection {
-  background: $green-highlight; /* WebKit/Blink Browsers */
+  background: $green-highlight;
   color: $text-light;
 }
-::-moz-selection {
-  background: $green-highlight; /* Gecko Browsers */
-  color: $text-light;
 
+::-moz-selection {
+  background: $green-highlight;
+  color: $text-light;
 }
 
 .container {
@@ -311,7 +311,7 @@ body {
 
     &-logo {
       margin: auto;
-  
+
       &-image {
         width: 140px;
       }
