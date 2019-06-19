@@ -135,7 +135,7 @@ body {
     margin: auto;
 
     &-image {
-      width: 140px;
+      width: 160px;
     }
   }
 
@@ -298,6 +298,14 @@ body {
 
   .topNav {
     padding: 2rem;
+
+    &-logo {
+      margin: auto;
+  
+      &-image {
+        width: 140px;
+      }
+    }
   }
 
   .footer {
