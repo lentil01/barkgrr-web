@@ -152,10 +152,21 @@ body {
   &-light {
     &-link {
       color: $link-color-light;
-      transition: opacity .2s ease-in-out;
+      transition: border-color .1s ease-in-out;
+      border-bottom: 1.5px solid transparent;
+      padding-bottom: 4px;
+
+      &-selected {
+        border-color: $text-light;
+
+      }
+
 
       &:hover {
-        opacity: 0.7;
+        border-color: $text-light;
+      }
+      &:active {
+        border-color: $text-light;
       }
     }
   }
