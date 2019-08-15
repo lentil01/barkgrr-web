@@ -336,14 +336,14 @@ body {
   border-radius: 100px;
   border: none;
   padding: 1rem;
-  background: #51AE7D;
+  background: $g10;
   color: $text-light;
   font-size: 16px;
   font-weight: 600;
   transition: background .2s ease-in-out;
 
   &:hover {
-    background: rgb(71, 168, 116);
+    background: #2DA983;
   }
 
   &:focus {
